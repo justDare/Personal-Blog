@@ -217,8 +217,10 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
+        new_subscriber = BlogUser.objects.create(
+            user=user, subscribed=true)
+        new_subscriber.save()
         login(request, user)
-        # return redirect('home')
         return render(request, 'blog/activation_success.html')
     else:
         return render(request, 'blog/activation_fail.html')

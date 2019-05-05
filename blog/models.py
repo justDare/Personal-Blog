@@ -6,6 +6,12 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 # Create your models here.
 
+class BlogUser(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    subscribed = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.user.username
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
