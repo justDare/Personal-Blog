@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Post, Comment, LikedBy
+from .models import Post, Comment, LikedBy, BlogUser
 from django.contrib.auth.models import User
 from django.db.models import F
 from django.contrib.auth import login, authenticate, logout
@@ -218,7 +218,7 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.save()
         new_subscriber = BlogUser.objects.create(
-            user=user, subscribed=true)
+            user=user, subscribed=True)
         new_subscriber.save()
         login(request, user)
         return render(request, 'blog/activation_success.html')
