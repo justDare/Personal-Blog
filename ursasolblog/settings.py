@@ -1,6 +1,5 @@
 import django_heroku
 import dj_database_url
-from superSecretStuff import *
 
 """
 Django settings for ursasolblog project.
