@@ -1,0 +1,8 @@
+venv
+staticfiles
+.env
+*.pyc
+*.sqlite3
+__pycache__
+ursasolblog/__pycache__
+ursasolblog/superSecretStuff.py

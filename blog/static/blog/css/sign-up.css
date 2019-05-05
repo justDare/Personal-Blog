@@ -1,0 +1,136 @@
+.container {
+  margin-top: 0rem;
+  position: relative;
+}
+
+.main {
+  background-color: rgb(22, 110, 150);
+}
+
+.join {
+  color: #f8f9fa !important;
+}
+
+.join h3 {
+  color: #989898;
+}
+
+.join h1 {
+  margin-bottom: 1rem;
+
+}
+
+.right-half {}
+
+.sign-up {
+  text-align: center;
+  max-width: 360px;
+  height: 320px;
+  height: auto;
+  background-color: #d4d0d0f2;
+  margin: auto;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.sign-up img {
+  height: 140px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.sign-up .form-item {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+input {
+  transition: all .2s ease;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  color: #8a8a8a;
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 5px 5%;
+  border: 1px solid #989898;
+  -moz-border-radius: 27px;
+  -webkit-border-radius: 27px;
+  border-radius: 27px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #e8e8e8;
+  font-family: 'HelveticaNeue', 'Arial', sans-serif;
+  font-size: 105%;
+  letter-spacing: .8px;
+}
+
+div.form-item input:focus {
+  outline: none;
+  border: 1px solid #58bff6;
+  color: #58bff6;
+}
+
+.form-item .form-label label {
+  position: absolute;
+  left: 26px;
+  top: 36px;
+  transition: all .4s ease;
+  color: #989898;
+}
+
+.form-item label[for="id_subscribed"] {
+  top: 16px;
+  left: 5px;
+}
+
+.form-item input[type="checkbox"] {
+  position: absolute;
+  top: 20px;
+  left: 140px;
+}
+
+.formTop {
+  top: 16px !important;
+  left: 26px;
+  padding: 0 5px;
+  font-size: 14px;
+  background-color: #e8e8e8;
+  color: black !important;
+  border-radius: 10px;
+  background-image: linear-gradient(to top, #e8e8e8c7 50%, #e8e8e8c7 50%);
+}
+
+.sign-up .button1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sign-up li {
+  list-style: none;
+}
+
+@media(max-width: 768px) {
+  .left-half {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .sign-up {
+    max-width: 340px;
+  }
+}
+
+
+@media(max-width: 320px) {
+  .sign-up {
+    max-width: 280px;
+  }
+}

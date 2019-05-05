@@ -1,0 +1,39 @@
+{% extends "blog/base.html" %}
+{% load staticfiles%}
+
+{% block csslinks %}
+      <link rel="stylesheet" type="text/css" href="{% static 'blog/css/about.css' %}">
+{% endblock %}
+
+{% block header %}
+{% endblock header%}
+
+{% block divide%}
+
+{% endblock %}
+
+{% block content %}
+<h1 data-aos="fade-left">About</h1>
+<div data-aos="fade-right">
+    <p>DareToProgram was created to to bring together a community of coders which anyone with the
+        will to learn can be a part of. Here we abolish any sense of entitlement and try to grow together as
+        developers, and most importantly, as people.
+    </p>
+    <h2>What will I find at DareToProgram?</h2>
+    <p>Content may vary...
+        <br>
+        <br>
+        I want to keep the topics of conversation pretty open here, however, the sole purpose of the content you find
+        here will be to help you on your journey to becoming a better programmer and person.
+        <br>
+        <br>
+        You will undoubtabley find some code tutorials, some tips and tricks, advice on where to start, etc., but we
+        want
+        to talk about more than just tech here. Personal health, lifestyle, and broader topics are all fair game here
+        as
+        well,
+        so take a look around, you never know what you might find useful.
+    </p>
+</div>
+
+{% endblock content %}

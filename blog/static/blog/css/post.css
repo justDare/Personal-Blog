@@ -1,0 +1,89 @@
+header {
+    display: none;
+}
+
+.post-banner img {
+    width: 100%;
+    border-bottom: 1px solid #989898;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.post-block .content {
+    margin-bottom: 3rem;
+}
+
+.post-block .content img {
+    max-width: 100%;
+}
+
+.comments form {
+    margin-bottom: 1rem;
+}
+
+.comments textarea {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-top: 12px;
+    width: 100%;
+}
+
+.comments textarea:focus {
+    outline: none !important;
+}
+
+.comments label {
+    display: none;
+}
+
+.user-comment-box {
+    margin-right: 10px;
+    padding-top: 9px;
+    color: #55b1df;
+    font-size: 1.25rem;
+}
+
+.blockquote {
+    display: none;
+}
+
+.comment-content {
+    word-break: break-all;
+}
+
+.comment-time {
+    color: #989898;
+    font-size: 1rem;
+}
+
+#moreComments {
+    width: 300px;
+    margin-bottom: 2rem;
+}
+
+.error-default {
+    margin-bottom: 0;
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+    display: none;
+}
+
+.error-empty {
+    margin-bottom: 0;
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+    display: none;
+}
+
+#join-convo {
+    width: 300px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}

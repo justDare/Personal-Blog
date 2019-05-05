@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include "blog/common/base-header.html" %}
+    {% block csslinks %}{% endblock %}
+</head>
+
+<body>
+  <div class="top">
+    {% include "blog/common/navbar.html" %}
+    {% block header %}{% endblock %}
+  </div>
+
+  {% block divide %}{% endblock %}
+  
+  <div class="main">
+    <div class="container"> 
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+
+  <footer>
+    <p style="font-size:13px"><span style="color:#989898">© 2018 </span>Darian Sampare</p>
+    <div id="social">
+      <a href="https://github.com/justDare" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.instagram.com/dariansampare/" target="_blank">
+        <i class="icon-eye fab fa-instagram"></i>
+      </a>
+      <a href="https://ca.linkedin.com/in/dariansampare" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://dariansampare.ca/" target="_blank">
+        <i class="fas fa-passport"></i>
+      </a>
+      <a href="https://ursasol.ca" target="_blank">
+        <img src="{% static "blog/img/logo_trans.png" %}"></img>
+      </a>
+    </div>
+  </footer>
+
+  <script src="{% static 'blog/js/clamp.js' %}"></script>
+  <script src="{% static 'blog/js/main.js' %}"></script>
+  <script src="{% static 'blog/js/dividers.js' %}"></script>
+  <script src="{% static 'blog/js/copycss.js' %}"></script>
+  {% block jslinks %}{% endblock %}
+
+  <!-- AOS animations-->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    
+    $('.post-content').each(function(index, element) {
+      $clamp(element, { clamp: 3, useNativeClamp: false });
+    });
+  </script>
+  
+  <!-- BOOTSTRAP JS-->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

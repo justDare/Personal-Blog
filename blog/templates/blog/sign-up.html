@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles%}
+
+{% block csslinks %}
+      <link rel="stylesheet" type="text/css" href="{% static 'blog/css/sign-up.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="seperate">
+  </div>
+  <div class="row bg">
+    <div class="col-sm-12 col-md-6 left-half">
+      <div class="join h-100 d-flex justify-content-center flex-column">
+        <h1 data-aos="zoom-in-down">Welcome to the DareToProgram Community!</h1>
+        <h3 data-aos="zoom-in-right" >Join the conversation</h3>
+        <h3 data-aos="zoom-in-right">Keep up to date with the latest posts</h3>
+        <h3 data-aos="zoom-in-right">Share your experinces</h3>
+        <h3></h3>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 right-half">
+      <div class="sign-up" data-aos="flip-left">
+          <h2>Sign Up</h2>
+          <form method="post">
+            {% csrf_token %}
+              {% for field in form %}
+              <div class="form-item">
+                <p class="form-label">
+                  {{ field.label_tag }}<br>
+                  {{ field }}
+                  {% if field.help_text %}
+                    <small style="display: none">{{ field.help_text }}</small>
+                  {% endif %}
+                  {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                  {% endfor %}
+                </p>
+              </div>
+              {% endfor %}
+            <button id="submit-signup" class="button1" type="submit">SUBMIT</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}{% block jslinks %}
+    <script src="{% static 'blog/js/sign-up.js' %}"></script>
+{% endblock %}
+

@@ -1,0 +1,36 @@
+.cat-banner {
+  background-color: transparent;
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-banner img {
+  height: 150px;
+  position: absolute;
+  top: 10%;
+}
+
+.cat-banner h5 {
+  text-align: center;
+  padding: 0 1rem 0 1rem;
+  position: absolute;
+  top: 70%;
+  color: #f8f9fa;
+}
+
+.post {
+  display: none;
+}
+
+#loadMore {
+  cursor: pointer; 
+  width: 152px;
+}
+
+#showLess {
+  cursor: pointer;
+  width: 152px;
+}

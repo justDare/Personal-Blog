@@ -1,0 +1,77 @@
+<div id="main-left" class="col-lg-7 col-md-12">
+
+    <ul class="nav nav-feed">
+        <li class="nav-item nav-link cool-link feed-active">
+            <h5 id="showPopular">POPULAR</h5>
+            <div class="underbar"></div>
+        </li>
+        <li class="nav-item nav-link cool-link">
+            <h5 id="showRecent">RECENT</h5>
+            <div class="underbar"></div>
+        </li>
+    </ul>
+
+    <div class="recentPosts">
+        {% for post in posts %}
+        <div class="post" data-aos="fade-down">
+            <div class="post-img">
+                <a href="/post?post_id={{post.id}}"><img class="img-fluid" src="media/{{post.image}}"></a>
+            </div>
+            <div class="post-info">
+                <h1 class="title">{{post.title}}</h1>
+                <p class="date">{{post.date_posted|date:'F d, Y'}}</p>
+                <p class="post-content">{{post.summary}}</p>
+                <a href="/post?post_id={{post.id}}"><button class="button1" id="read-more">Read more</button></a>
+                <div class="post-bottom row">
+                    <div class="col-6">
+                        <p class="author"><i class="fas fa-user"></i>{{post.author}} </p>
+                    </div>
+                    <div class="likes col-6">
+                        <div id="{{post.id}}" class="heart {% for user_like in user_likes %} {% if user_like.post == post.id %} heart-clicked {% endif %}{% endfor %}"></div>
+                        <p class="likes-p">{{post.likes}} like{{post.likes|pluralize}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="popularPosts">
+        {% for popPost in popularPosts %}
+        <div class="post" data-aos="fade-down">
+            <div class="post-img">
+                <a href="/post?post_id={{popPost.id}}"><img class="img-fluid" src="media/{{popPost.image}}"></a>
+            </div>
+            <div class="post-info">
+                <h1 class="title">{{popPost.title}}</h1>
+                <p class="date">{{popPost.date_posted|date:'F d, Y'}}</p>
+                <p class="post-content">{{popPost.summary}}</p>
+                <a href="/post?post_id={{popPost.id}}"><button class="button1" id="read-more">Read more</button></a>
+                <div class="post-bottom row">
+                    <div class="col-6">
+                        <p class="author"><i class="fas fa-user"></i>{{popPost.author}} </p>
+                    </div>
+                    <div class="likes col-6">
+                        <div id="{{popPost.id}}" class="heart {% for user_like in user_likes %} {% if user_like.post == popPost.id %} heart-clicked {% endif %}{% endfor %}"></div>
+                        <p class="likes-p">{{popPost.likes}} like{{popPost.likes|pluralize}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if posts %}
+    <div class="col-sm-12 my-auto">
+        <div class="w-100 text-center">
+            {% if page == 'home' %}
+            <a href="/category?category=all"><button class="button1 button2" id="loadMore">MORE POSTS</button></a>
+            {% else %}
+            <button class="button1 button2" id="loadMore">MORE POSTS</button>
+            {% endif%}
+        </div>
+    </div>
+    {% else %}
+    <h3>No posts yet!</h3>
+    {% endif %}
+</div>

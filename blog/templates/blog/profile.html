@@ -1,0 +1,46 @@
+{% extends "blog/base.html" %}
+{% load staticfiles%}
+
+{% block csslinks %}
+      <link rel="stylesheet" type="text/css" href="{% static 'blog/css/profile.css' %}">
+{% endblock %}
+
+{% block header %}
+<div class="profile-banner">
+    <div class="row align-items-center h-100">
+        <div class="col-sm-12 col-md-6 order-md-2">
+            <div class="prof-info" data-aos="fade-down" data-aos-offset="300"data-aos-easing="ease-in-sine">
+                <h1>Hi, I'm Darian Sampare.</h1>
+                <h6>UI Designer, Web Developer, Software Engineer, </h6>
+                <p class="icon-links">
+                    <a href="https://github.com/justDare" target="_blank"><i class="fab fa-github grow"></i></a>
+                    <a href="https://www.instagram.com/dariansampare/" target="_blank"><i class="icon-eye fab fa-instagram grow"></i></a>
+                    <a href="https://www.linkedin.com/in/dariansampare/" target="_blank"><i class="fab fa-linkedin-in grow"></i></a>
+                    <a href="https://dariansampare.ca/" target="_blank"><i class="fas fa-passport"></i></a>
+                </p>
+                <p class="sign-off">I just like to build cool things. To be honest I never would have thought this woud be my career path,
+                I thought you had to be a genious. Now that I have myself as proof that this isn't the case, I want 
+                to share my knowledge with anyone who will listen.
+                </p>
+                <p class="sign-off">Doing my best,</p>
+                <p class="sign-off">Dare</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 order-md-1"> 
+            <div class="img-holder text-center">
+                <img class="" src="{% static "blog/img/dare.png" %}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% include "blog/common/full-sidebar.html" %}
+    </div>
+{% endblock content %}
+
+{% block jslinks %}
+    <script src="{% static 'blog/js/profile.js' %}"></script>
+{% endblock %}

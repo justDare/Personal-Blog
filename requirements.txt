@@ -1,0 +1,10 @@
+dj-database-url
+Django
+gunicorn
+psycopg2-binary
+whitenoise
+django-heroku
+django-summernote
+django-secure
+django-sslserver
+sendgrid

@@ -1,0 +1,66 @@
+
+{% extends "blog/base.html" %}
+{% load staticfiles%}
+
+{% block csslinks %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/post.css' %}">
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="post-block col-lg-9 col-md-12">
+        <div class="post-intro text-center">
+            <h1 class="title">{{this_post.title}}</h1>
+            <p class="date">{{this_post.date_posted|date:'F d, Y'}}</p>
+            <p class="author"><i class="fas fa-user"></i>{{this_post.author}} </p>
+        </div>
+        <div class="post-banner">
+            <img src="media/{{this_post.image}}" data-aos="fade-down" data-aos-delay="500"></img>
+        </div>
+        <h5 class="content editor">{{this_post.content | safe}}</h5>
+        <div class="like-post-view" style="height:25px;">
+            <p style="position:absolute">Like this post here:</p>
+            <div id="{{this_post.id}}" style="height:25px;" class="heart {% for user_like in user_likes %} {% if user_like.post == this_post.id %} heart-clicked {% endif %}{% endfor %}"></div>
+            <p class="likes-p">{{this_post.likes}} like{{this_post.likes|pluralize}}</p>
+        </div>
+        <div class="comments">
+            <form method="POST">
+                {% csrf_token%}
+                {% if user.is_authenticated %}
+                <p class="error-default">That's not very original!</p>
+                <p class="error-empty">Come on don't be shy!</p>
+                <p class="user-comment-box">{{ request.user.username }}:</p>
+                {{ comment_form.as_p }}
+                <input id="submit-comment" value="submit" class="btn button1 button2">
+                {% else %}
+                <a href="{% url 'blog-sign-up' %}">
+                    <div class="btn button1 button2" id="join-convo">JOIN THE CONVERSATION</div>
+                </a>
+                {% endif %}
+            </form>
+            <p id="comment-count">{{comments.count}} Comment{{comments|pluralize}}</p>
+            <div class="comment-list">
+                {% for comment in comments %}
+                <blockquote class="blockquote">
+                    <div class="mb-0 comment-content"><span style="color:#55b1df;padding-right:10px;">{{comment.user|capfirst}}</span>
+                        <p>{{comment.content}}</p>
+                    </div>
+                    <p class="comment-time">{{comment.timestamp}}</p>
+                </blockquote>
+                {% endfor %}
+            </div>
+            <button class="button1 button2" id="moreComments">LOAD MORE COMMENTS</button>
+        </div>
+
+    </div>
+    {% include "blog/common/post-right-sidebar.html" %}
+</div>
+{% endblock content %}
+
+{% block jslinks %}
+<script src="{% static 'blog/js/post.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles%}
+
+{% block csslinks %}
+      <link rel="stylesheet" type="text/css" href="{% static 'blog/css/sign-up.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'blog/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="sign-up" data-aos="flip-left">
+        <img src=""></img>
+        <h2>Login</h2>
+        <form method="post">
+          {% csrf_token %}
+            {% for field in form %}
+            <div class="form-item">
+                <p class="form-label">
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                  <small style="display: none">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                  <p style="color: red">{{ error }}</p>
+                {% endfor %}
+                </p>
+            </div>
+            {% endfor %}
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    {% if forloop.first %}
+                    <p>{{ error }}</p>            
+                    {% endif %} 
+                {% endfor %}
+            {% endif %}
+          <button class="button1" type="submit">LOGIN</button>
+        </form>
+      </div>
+    {% endblock %}
+    {% block jslinks %}
+    <script src="{% static 'blog/js/sign-up.js' %}"></script>
+    {% endblock %}

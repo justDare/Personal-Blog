@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles%}
+
+{% block csslinks %}
+      
+{% endblock %}
+
+{% block content %}
+    <div class="row h-100">
+        <div class="col-sm-12 my-auto">
+            <div class="w-100 text-center">
+                <h1>Your activation link has been sent!</h1>
+                <br>
+                <h1>Now just check your email and follow the instructions to confirm your account.</h1>
+                <img  data-aos="fade-right" style="height: 100px;margin-top: 2rem;margin-bottom: 2rem;" src="{% static "blog/img/mail.svg" %}" alt="">
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
+
+{% block jslinks %}
+    
+{% endblock %}
