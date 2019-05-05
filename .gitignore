@@ -6,3 +6,4 @@ staticfiles
 __pycache__
 ursasolblog/__pycache__
 ursasolblog/superSecretStuff.py
+ursasolblog/devSettings.py

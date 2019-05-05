@@ -1,3 +1,5 @@
+from superSecretStuff import *
+
 """
 Django settings for ursasolblog project.
 
@@ -141,10 +143,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-SEND_GRID_API_KEY = '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'
+SEND_GRID_API_KEY = EMAIL_API
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'DarianS'
-EMAIL_HOST_PASSWORD = 'Roxydog2002'
+EMAIL_HOST_PASSWORD = EMAIL_PASSWORD
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'dsampare04@gmail.com'
