@@ -31,8 +31,11 @@ SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 EMAIL_API = os.environ.get("EMAIL_API_KEY")
-
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+
+AWS_ACCESS_KEY = os.environ.get("AWS_ACCESS_KEY")
+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY")
+AWS_BUCKET_1 = os.environ.get("AWS_BUCKET_1")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
