@@ -8,3 +8,6 @@ django-summernote
 django-secure
 django-sslserver
 sendgrid
+boto3
+django-storages
+django-cors-headers
