@@ -15,7 +15,7 @@
         {% for post in posts %}
         <div class="post" data-aos="fade-down">
             <div class="post-img">
-                <a href="/post?post_id={{post.id}}"><img class="img-fluid" src="media/{{post.image}}"></a>
+                <a href="/post?post_id={{post.id}}"><img class="img-fluid" src="{{ MEDIA_URL }}{{post.image}}"></a>
             </div>
             <div class="post-info">
                 <h1 class="title">{{post.title}}</h1>
