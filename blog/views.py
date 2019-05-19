@@ -149,7 +149,6 @@ def signup(request):
             user.is_active = False
             user.save()
 
-            subject = "Sign up form recieved"
             current_site = get_current_site(request)
             subject = 'Activate your blog account.'
 
@@ -161,12 +160,7 @@ def signup(request):
             })
             to_email = [form.cleaned_data.get('email')]
             from_email = settings.DEFAULT_FROM_EMAIL
-            '''
-            email = EmailMessage(
-                mail_subject, message, to=[to_email]
-            )
-            email.send()
-            '''
+        
             send_mail(subject, message, from_email,
                       to_email, fail_silently=True)
             return render(request, 'blog/confirmation_sent.html')
