@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block header %}
-<div class="cat-banner">
-    <img src="media/categories/{{category}}1_large.png" data-aos="fade-down" data-aos-delay="500"></img>
+<div class="cat-banner"> 
+    <img src="{% static 'blog/img/categories/' %}{{category}}1_large.png" data-aos="fade-down" data-aos-delay="500"></img>
     <h5 data-aos="fade-down">Check out our recent posts at DareToProgram. For category filters, see below.</h5>
 </div>
 {% endblock %}

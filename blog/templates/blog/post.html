@@ -1,6 +1,7 @@
 
 {% extends "blog/base.html" %}
-{% load staticfiles%}
+{% load staticfiles %}
+{% load static %}
 
 {% block csslinks %}
 <link rel="stylesheet" type="text/css" href="{% static 'blog/css/post.css' %}">
@@ -19,7 +20,7 @@
             <p class="author"><i class="fas fa-user"></i>{{this_post.author}} </p>
         </div>
         <div class="post-banner">
-            <img src="media/{{this_post.image}}" data-aos="fade-down" data-aos-delay="500"></img>
+            <img src="{% get_media_prefix %}{{this_post.image}}" data-aos="fade-down" data-aos-delay="500"></img>
         </div>
         <h5 class="content editor">{{this_post.content | safe}}</h5>
         <div class="like-post-view" style="height:25px;">
