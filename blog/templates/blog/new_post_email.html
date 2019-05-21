@@ -1,5 +1,12 @@
-{% autoescape off %}
-<h1>Hi {{ user.username }}!</h1>
-Check out this week's post at DareToProgram
-http://{{ domain }}
-{% endautoescape %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        {% autoescape off %}
+            <h1>Hi {{ user.username }}!</h1>
+            <h2>Check out this week's post at DareToProgram: http://{{ domain }}</h2>
+        {% endautoescape %}
+    </body>
+</html>
