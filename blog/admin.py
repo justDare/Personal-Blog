@@ -20,6 +20,8 @@ admin.site.register(LikedBy)
 admin.site.register(BlogUser)
 
 # custom post admin page
+
+
 class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
     change_form_template = "entities/post_change_form.html"
@@ -37,15 +39,15 @@ class PostAdmin(SummernoteModelAdmin):
                 to_email = [user.email]
                 message = loader.render_to_string('blog/new_post_email.html', {
                     'user': user,
-                    'domain': current_site.domain + "/post?post_id=" + str(thisPost.id) ,
+                    'domain': current_site.domain + "/post?post_id=" + str(thisPost.id),
                 })
                 send_mail(subject, message, from_email,
-                        to_email, fail_silently=True, html_message=message)
-                        
-            self.message_user(request, "Email successfully sent to subscribers!")
+                          to_email, fail_silently=True, html_message=message)
+
+            self.message_user(
+                request, "Email successfully sent to subscribers!")
             return HttpResponseRedirect(".")
-        return super().response_cq
+        return super().response_change(request, obj)
+
 
 admin.site.register(Post, PostAdmin)
-
-
