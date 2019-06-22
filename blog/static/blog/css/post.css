@@ -18,6 +18,10 @@ header {
     margin-bottom: 3rem;
 }
 
+.post-block .content p span {
+    font-weight: 400px;
+}
+
 .post-block .content img {
     max-width: 100%;
 }
