@@ -38,8 +38,8 @@ AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY")
 AWS_BUCKET_1 = os.environ.get("AWS_BUCKET_1")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
 
