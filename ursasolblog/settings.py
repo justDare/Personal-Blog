@@ -38,8 +38,8 @@ AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY")
 AWS_BUCKET_1 = os.environ.get("AWS_BUCKET_1")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = False
+# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
 
@@ -85,7 +85,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_REPLACE_HTTPS_REFERER =True
+CORS_REPLACE_HTTPS_REFERER = True
 
 SECURE_SSL_REDIRECT = True
 
@@ -187,7 +187,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog/static'),
 ]
 
-DEFAULT_FILE_STORAGE = 'ursasolblog.storage_backends.MediaStorage' 
+DEFAULT_FILE_STORAGE = 'ursasolblog.storage_backends.MediaStorage'
 
 # sendgrid
 SEND_GRID_API_KEY = EMAIL_API
